@@ -1,0 +1,184 @@
+abbr, address, article, aside, audio, b, blockquote, body, canvas, caption, cite, code, dd, del, details, dfn, div, dl, dt, em, fieldset, figcaption, figure, footer, form, h1, h2, h3, h4, h5, h6, header, hgroup, html, i, iframe, img, ins, kbd, label, legend, li, mark, menu, nav, object, ol, p, pre, q, samp, section, small, span, strong, sub, summary, sup, table, tbody, td, tfoot, th, thead, time, tr, ul, var, video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+    font-weight: 400;
+}
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section {
+    display: block;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-size: 16px;
+    line-height: 1.7;
+    font-family: Raleway,sans-serif;
+    color: #333;
+    letter-spacing:.03em;
+    background: #f2f2f2 url(~/assets/img/background.jpg);
+    background-size: auto;
+    background-repeat: repeat;
+}
+
+.border-bottom, .border-left, .border-right, .border-top {
+    background: #fff;
+    position: fixed;
+    z-index: 9999;
+}
+
+.border-bottom, .border-top {
+    height: 10px;
+    width: 100%;
+}
+
+.border-left, .border-right {
+    width: 10px;
+    height: 100%;
+}
+
+.border-right {
+    right: 0;
+}
+
+.border-bottom {
+    bottom: 0;
+}
+
+p {
+    margin-bottom: 1rem;
+}
+
+a {
+    margin: 0;
+    padding: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: 0 0;
+    color: #0bd;
+    text-decoration: none;
+}
+
+ul {
+    list-style: none;
+}
+
+img {
+    height: auto;
+}
+
+iframe, img {
+    max-width: 100%;
+}
+
+input, select {
+    vertical-align: middle;
+}
+
+input:focus, select:focus, textarea:focus {
+    outline:solid 2px #ff6a00;
+    transition: 1s;
+}
+
+.container, .narrow-container {
+    margin: 0 auto;
+    padding-right: 8%;
+    padding-left: 8%;
+}
+
+.container {
+    max-width: 1000px;
+}
+
+.narrow-container {
+    max-width: 800px;
+}
+
+.scroll-arrow {
+    width: 40px;
+    height: 20px;
+    fill: #333;
+    -webkit-animation: scroll-fade 1.5s infinite;
+    animation: scroll-fade 1.5s infinite;
+}
+
+.flex-center {
+    display: flex;
+    align-items: center;
+    height: 100%;
+}
+
+.arrow-wrap {
+    position: absolute;
+    bottom: 70px;
+    display: flex;
+    justify-content: center;
+    width: 100%;
+}
+
+.scroll-wrap {
+    scroll-snap-type: y proximity;
+    height: 100vh;
+    overflow: auto;
+}
+
+.scroll-wrap section {
+    scroll-snap-align: start;
+    height: 100vh;
+}
+
+.scroll-wrap section:not(:first-child) {
+    scroll-snap-align: start;
+    height: 100vh;
+}
+
+@media (min-width: 860px) {
+    .border-bottom, .border-top {
+        height: 20px;
+    }
+    .border-left, .border-right {
+        width: 20px;
+    }
+    .flexbox {
+        display: flex;
+    }
+
+    .contact .narrow-container {
+        padding-top: 10%;
+        padding-bottom: 0;
+    }
+}
+
+@media (min-width: 1080px) {
+
+    .w-flexbox {
+        display: flex;
+    }
+
+    .container, .narrow-container {
+        padding-right: 0;
+        padding-left: 0;
+    }
+}
+
+@keyframes scroll-fade {
+    0% {
+        opacity: 0;
+        transform: translate(0);
+    }
+    
+    50% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+}
