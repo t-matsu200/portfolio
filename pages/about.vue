@@ -51,13 +51,14 @@ export default class Works extends Vue {}
 </script>
 
 <style scoped>
+  @import url(~/assets/css/blog-img.css);
+
   .full-blog {
     color: #fff;
     background-size: cover;
     width: 100%;
     height: 100vh;
     position: relative;
-    background: #C0C0C0 url(~/assets/img/nyansomware.svg) no-repeat 100% 0;
   }
 
   .full-blog h1, .about-fav h1, .about-systema h1 {
@@ -90,7 +91,7 @@ export default class Works extends Vue {}
   }
 
   .about-systema {
-    background: #CCFFFF url(~/assets/img/rosia.svg) no-repeat top;
+    background: #585858 url(~/assets/img/rosia.svg) no-repeat top;
     text-align: center;
     background-size: cover;
     width: 100%;
