@@ -3,7 +3,7 @@
     <div class="narrow-container">
       <h1>Contact</h1>
       <p>{{ $t("CONTACT_FORM_LABEL") }}</p>
-      <form
+      <form netlify
         name="contact"
         method="POST"
         data-netlify="true"
