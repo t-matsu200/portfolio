@@ -54,7 +54,7 @@ export default class Works extends Vue {
       datasets: [
         {
           label: 'Usage',
-          data: [4.5, 3.5, 3.5, 3, 3, 1, 4]
+          data: [4.5, 4, 4, 3, 4, 2, 4]
         }
       ]
     } as ChartData
@@ -66,7 +66,7 @@ export default class Works extends Vue {
       datasets: [
         {
           label: 'Usage',
-          data: [4, 4, 2, 4, 3]
+          data: [4, 4, 3, 4, 3]
         }
       ]
     } as ChartData
@@ -78,7 +78,7 @@ export default class Works extends Vue {
       datasets: [
         {
           label: 'Usage',
-          data: [4.5, 4, 2, 3]
+          data: [4.5, 4, 3, 4]
         }
       ]
     } as ChartData

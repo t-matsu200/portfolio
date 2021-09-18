@@ -4,13 +4,13 @@
       <h1>Contact</h1>
       <p>{{ $t("CONTACT_FORM_LABEL") }}</p>
       <form
-        name="contact-form"
+        name="contact"
         method="POST"
         data-netlify="true"
         data-netlify-honeypot="HelloHoney"
         @submit="submit"
       >
-        <input type="hidden" name="form-name" value="contact-form">
+        <input type="hidden" name="form-name" value="contact">
         <div class="flexbox">
           <div>
             <label for="name">Name</label>
