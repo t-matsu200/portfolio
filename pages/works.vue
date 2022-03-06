@@ -39,7 +39,7 @@ import { Component, Vue } from 'nuxt-property-decorator'
 import { ChartData, ChartOptions } from 'chart.js'
 import ChartRadar from '~/components/ChartRadarComponent.vue'
 
-import { vulnerabiritySite } from '~/components/b64/b64'
+import b64Img from '~/components/b64/b64'
 
 @Component({
   components: {
@@ -49,7 +49,7 @@ import { vulnerabiritySite } from '~/components/b64/b64'
 export default class Works extends Vue {
 
   get b64VulnerabiritySite(): string {
-    return vulnerabiritySite;
+    return b64Img.vulnerabiritySite;
   }
   
   get chartData(): ChartData | null {
@@ -60,7 +60,7 @@ export default class Works extends Vue {
       datasets: [
         {
           label: 'Usage',
-          data: [4.5, 4, 4, 3, 3, 4, 2, 4]
+          data: [5, 4.5, 4, 3, 3, 4, 2, 4]
         }
       ]
     } as ChartData
@@ -72,7 +72,7 @@ export default class Works extends Vue {
       datasets: [
         {
           label: 'Usage',
-          data: [4, 4, 3, 4, 3]
+          data: [4, 4, 3, 4, 3.5]
         }
       ]
     } as ChartData
@@ -84,7 +84,7 @@ export default class Works extends Vue {
       datasets: [
         {
           label: 'Usage',
-          data: [4.5, 4, 3, 4]
+          data: [5, 4, 3, 4]
         }
       ]
     } as ChartData

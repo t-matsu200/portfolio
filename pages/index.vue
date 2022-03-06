@@ -11,6 +11,7 @@
           <span v-if="$i18n.locale === 'en'"> {{ new Date().getFullYear() - 2017 }}{{ $t('ENGINEER_HISTORY') }}</span>
           <span v-else>{{ $t('ENGINEER_HISTORY') }} {{ new Date().getFullYear() - 2017 }}年</span>
         </p>
+        <p>{{ $t('QUALIFICATION') }}</p>
         <p>{{ $t('LICENSE_LABEL') }}<br>{{ $t('CC_BY_NC_ND') }}</p>
       </section>
     </div>

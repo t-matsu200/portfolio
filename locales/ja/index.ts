@@ -9,5 +9,6 @@ export default {
   ABOUT_SYSTEMA_RUSIAN: 'ロシア語で `Система`',
   SHONAN_SYSTEMA: '湘南システマ',
   WORKS_VUL_SITE_LABEL: 'Oracle Cloud上で脆弱性情報を収集・表示する、3層クライアントサーバーシステムです。',
-  CONTACT_FORM_LABEL: 'このWebサイトについて、なにかコメントがありましたら下記のフォームをご利用ください。'
+  CONTACT_FORM_LABEL: 'このWebサイトについて、なにかコメントがありましたら下記のフォームをご利用ください。',
+  QUALIFICATION: '応用情報技術者試験 取得'
 }

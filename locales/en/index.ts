@@ -9,5 +9,6 @@ export default {
   ABOUT_SYSTEMA_RUSIAN: '`Система` in Russian.',
   SHONAN_SYSTEMA: 'Shonan Systema',
   WORKS_VUL_SITE_LABEL: 'A 3-tier client-server system that collects and displays vulnerability information on the Oracle Cloud.',
-  CONTACT_FORM_LABEL: 'If you have any comments about this website, please use the form below.'
+  CONTACT_FORM_LABEL: 'If you have any comments about this website, please use the form below.',
+  QUALIFICATION: 'Applied Information Technology Engineer Examination.'
 }
