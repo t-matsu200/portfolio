@@ -3,20 +3,19 @@
     <div class="narrow-container">
       <h1>Contact</h1>
       <p>{{ $t("CONTACT_FORM_LABEL") }}</p>
-      <form netlify
+      <form
         name="contact"
         method="post"
         data-netlify="true"
         data-netlify-honeypot="bot-field"
+        @submit.prevent="handleSubmit"
       >
-        <input type="hidden" name="form-name" value="contact">
         <div class="flexbox">
           <div>
             <label for="name">Name</label>
             <span>
               <input
-                :value="name"
-                @input="ev => name = ev.target.value"
+                v-model="name"
                 type="text"
                 name="name"
                 size="40"
@@ -29,8 +28,7 @@
             <label for="email">Email</label>
             <span>
               <input
-                :value="email"
-                @input="ev => email = ev.target.value"
+                v-model="email"
                 type="email"
                 name="email"
                 size="40"
@@ -45,7 +43,7 @@
             <label for="message">Message</label>
             <span>
               <textarea
-                :value="message"
+                v-model="message"
                 name="message"
                 cols="41"
                 rows="11"
@@ -65,7 +63,8 @@
 </template>
 
 <script lang="ts">
-import { Component, Vue, Watch } from 'nuxt-property-decorator'
+import { Component, Vue, Watch } from 'nuxt-property-decorator';
+import axios, { AxiosRequestConfig } from 'axios';
 
 @Component
 export default class Contact extends Vue {
@@ -96,6 +95,39 @@ export default class Contact extends Vue {
   public messageChange(v: string): void {
     if (v) {
       this.validateMessage()
+    }
+  }
+
+  public encode (data: any) {
+    return Object.keys(data)
+      .map(
+        key => `${encodeURIComponent(key)}=${encodeURIComponent(data[key])}`
+      )
+      .join('&');
+  }
+
+  public handleSubmit(event: Event): void {
+    if (event.type === 'submit') {
+      const r1 = this.validateName()
+      const r2 = this.validateEmail()
+      const r3 = this.validateMessage()
+
+      if (!(!r1 && !r2 && !r3)) {
+        return;
+      }
+      const axiosConfig = {
+        header: { 'Content-Type': 'application/x-www-form-urlencoded' }
+      } as AxiosRequestConfig;
+      axios.post(
+        '/',
+        this.encode({
+          'form-name': 'contact',
+          'name': this.name,
+          'email': this.email,
+          'message': this.message,
+        }),
+        axiosConfig
+      );
     }
   }
 
