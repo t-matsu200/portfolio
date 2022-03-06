@@ -4,13 +4,14 @@
       <h1>Contact</h1>
       <p>{{ $t("CONTACT_FORM_LABEL") }}</p>
 
-      <form netlify
+      <form
+        data-netlify="true"
         name="contact"
         method="POST"
       >
         <div class="flexbox">
           <div>
-            <label for="name">Name</label>
+            <label>Name</label>
             <span>
               <input
                 type="text"
@@ -19,7 +20,7 @@
                 autocomplete="name"
               >
             </span>
-            <label for="email">Email</label>
+            <label>Email</label>
             <span>
               <input
                 type="email"
@@ -30,7 +31,7 @@
             </span>
           </div>
           <div>
-            <label for="message">Message</label>
+            <label>Message</label>
             <span>
               <textarea
                 name="message"
