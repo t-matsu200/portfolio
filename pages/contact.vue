@@ -3,45 +3,60 @@
     <div class="narrow-container">
       <h1>Contact</h1>
       <p>{{ $t("CONTACT_FORM_LABEL") }}</p>
-
-      <form
-        data-netlify="true"
+      <form netlify
         name="contact"
-        method="POST"
+        method="post"
+        data-netlify="true"
+        data-netlify-honeypot="bot-field"
       >
+        <input type="hidden" name="form-name" value="contact">
         <div class="flexbox">
           <div>
-            <label>Name</label>
+            <label for="name">Name</label>
             <span>
               <input
+                :value="name"
+                @input="ev => name = ev.target.value"
                 type="text"
                 name="name"
                 size="40"
                 autocomplete="name"
               >
+              <p v-show="validation.nameMsg" class="not-valid">
+                {{ validation.nameMsg }}
+              </p>
             </span>
-            <label>Email</label>
+            <label for="email">Email</label>
             <span>
               <input
+                :value="email"
+                @input="ev => email = ev.target.value"
                 type="email"
                 name="email"
                 size="40"
                 autocomplete="email"
               >
+              <p v-show="validation.emailMsg" class="not-valid">
+                {{ validation.emailMsg }}
+              </p>
             </span>
           </div>
           <div>
-            <label>Message</label>
+            <label for="message">Message</label>
             <span>
               <textarea
+                :value="message"
                 name="message"
                 cols="41"
                 rows="11"
               ></textarea>
+              <p v-show="validation.messageMsg" class="not-valid">
+                {{ validation.messageMsg }}
+              </p>
             </span>
           </div>
         </div>
-        <button type="submit" class="btn">
+        <button class="btn">
           Send
         </button>
       </form>
@@ -83,18 +98,6 @@ export default class Contact extends Vue {
       this.validateMessage()
     }
   }
-
-  // public submit(event: Event): void {
-  //   if (event.type === 'submit') {
-  //     const r1 = this.validateName()
-  //     const r2 = this.validateEmail()
-  //     const r3 = this.validateMessage()
-
-  //     if (!(!r1 && !r2 && !r3)) {
-  //       event.preventDefault()
-  //     }
-  //   }
-  // }
 
   private validateName(): boolean {
     if (!this.name.trim()) {
