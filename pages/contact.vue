@@ -3,7 +3,7 @@
     <div class="narrow-container">
       <h1>Contact</h1>
       <p>{{ $t("CONTACT_FORM_LABEL") }}</p>
-      <form name="contact" method="POST" data-netlify="true">
+      <form name="contact" action="/success" method="POST" data-netlify="true">
         <div class="flexbox">
           <div>
             <label for="name">Name</label>
@@ -15,9 +15,6 @@
                 autocomplete="name"
                 required
               >
-              <p v-show="validation.nameMsg" class="not-valid">
-                {{ validation.nameMsg }}
-              </p>
             </span>
             <label for="email">Email</label>
             <span>
@@ -28,23 +25,17 @@
                 autocomplete="email"
                 required
               >
-              <p v-show="validation.emailMsg" class="not-valid">
-                {{ validation.emailMsg }}
-              </p>
             </span>
           </div>
           <div>
-            <label for="content">Message</label>
+            <label for="message">Message</label>
             <span>
               <textarea
-                name="content"
+                name="message"
                 cols="41"
                 rows="11"
                 required
               ></textarea>
-              <p v-show="validation.messageMsg" class="not-valid">
-                {{ validation.messageMsg }}
-              </p>
             </span>
           </div>
         </div>
@@ -71,26 +62,26 @@ export default class Contact extends Vue {
     messageMsg: ''
   };
 
-  @Watch('name', { deep: true, immediate: true })
-  public nameChange(v: string): void {
-    if (v) {
-      this.validateName()
-    }
-  }
+  // @Watch('name', { deep: true, immediate: true })
+  // public nameChange(v: string): void {
+  //   if (v) {
+  //     this.validateName()
+  //   }
+  // }
 
-  @Watch('email', { deep: true, immediate: true })
-  public emailChange(v: string): void {
-    if (v) {
-      this.validateEmail()
-    }
-  }
+  // @Watch('email', { deep: true, immediate: true })
+  // public emailChange(v: string): void {
+  //   if (v) {
+  //     this.validateEmail()
+  //   }
+  // }
 
-  @Watch('message', { deep: true, immediate: true })
-  public messageChange(v: string): void {
-    if (v) {
-      this.validateMessage()
-    }
-  }
+  // @Watch('message', { deep: true, immediate: true })
+  // public messageChange(v: string): void {
+  //   if (v) {
+  //     this.validateMessage()
+  //   }
+  // }
 
   public encode (data: any) {
     return Object.keys(data)

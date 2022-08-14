@@ -10,5 +10,7 @@ export default {
   SHONAN_SYSTEMA: '湘南システマ',
   WORKS_VUL_SITE_LABEL: 'Oracle Cloud上で脆弱性情報を収集・表示する、3層クライアントサーバーシステムです。',
   CONTACT_FORM_LABEL: 'このWebサイトについて、なにかコメントがありましたら下記のフォームをご利用ください。',
-  QUALIFICATION: '応用情報技術者試験 取得'
+  QUALIFICATION: '応用情報技術者試験 取得',
+  SUCCESS_MSG: '送信に成功しました',
+  RETURN: '戻る',
 }
