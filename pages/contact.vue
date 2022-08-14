@@ -4,6 +4,7 @@
       <h1>Contact</h1>
       <p>{{ $t("CONTACT_FORM_LABEL") }}</p>
       <form name="contact" action="/success" method="POST" data-netlify="true">
+        <input type="hidden" name="form-name" value="contact" /> 
         <div class="flexbox">
           <div>
             <label for="name">Name</label>
