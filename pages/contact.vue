@@ -3,23 +3,17 @@
     <div class="narrow-container">
       <h1>Contact</h1>
       <p>{{ $t("CONTACT_FORM_LABEL") }}</p>
-      <form
-        name="contact"
-        method="post"
-        data-netlify="true"
-        data-netlify-honeypot="bot-field"
-        @submit.prevent="handleSubmit"
-      >
+      <form name="contact" method="POST" data-netlify="true">
         <div class="flexbox">
           <div>
             <label for="name">Name</label>
             <span>
               <input
-                v-model="name"
                 type="text"
                 name="name"
                 size="40"
                 autocomplete="name"
+                required
               >
               <p v-show="validation.nameMsg" class="not-valid">
                 {{ validation.nameMsg }}
@@ -28,11 +22,11 @@
             <label for="email">Email</label>
             <span>
               <input
-                v-model="email"
                 type="email"
                 name="email"
                 size="40"
                 autocomplete="email"
+                required
               >
               <p v-show="validation.emailMsg" class="not-valid">
                 {{ validation.emailMsg }}
@@ -40,13 +34,13 @@
             </span>
           </div>
           <div>
-            <label for="message">Message</label>
+            <label for="content">Message</label>
             <span>
               <textarea
-                v-model="message"
-                name="message"
+                name="content"
                 cols="41"
                 rows="11"
+                required
               ></textarea>
               <p v-show="validation.messageMsg" class="not-valid">
                 {{ validation.messageMsg }}
@@ -54,7 +48,7 @@
             </span>
           </div>
         </div>
-        <button class="btn">
+        <button class="btn" type="submit">
           Send
         </button>
       </form>
